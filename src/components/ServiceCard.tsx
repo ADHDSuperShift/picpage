@@ -1,5 +1,6 @@
 import React from 'react';
 import { Service } from '@/data/salons';
+import { formatZar } from '@/lib/currency';
 
 interface ServiceCardProps {
   service: Service;
@@ -15,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => {
           <p className="text-sm text-gray-400">{service.duration}</p>
         </div>
         <div className="text-right">
-          <p className="text-xl font-bold text-[#C81D25]">${service.price}</p>
+          <p className="text-xl font-bold text-[#C81D25]">{formatZar(service.price)}</p>
         </div>
       </div>
       <button

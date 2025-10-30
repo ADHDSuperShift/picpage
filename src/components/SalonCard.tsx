@@ -26,7 +26,9 @@ const SalonCard: React.FC<SalonCardProps> = ({ salon }) => {
             <span className="font-semibold text-white">{salon.rating}</span>
             <span className="text-gray-400 text-sm ml-1">({salon.reviewCount})</span>
           </div>
-          <span className="text-[#D4AF37] font-semibold">{salon.priceRange}</span>
+          <span className="text-[#D4AF37] font-semibold">
+            {'R'.repeat(Math.max(1, salon.priceRange.length))}
+          </span>
         </div>
         <button
           onClick={() => navigate(`/salon/${salon.id}`)}
