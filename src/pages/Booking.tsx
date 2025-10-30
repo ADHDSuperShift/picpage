@@ -30,7 +30,7 @@ const Booking: React.FC = () => {
 
   return (
     <AppProvider>
-      <div className="min-h-screen bg-[#FFF8E7]">
+  <div className="min-h-screen bg-background text-foreground">
         <Navbar />
         <div className="bg-[#1E1E1E] text-white py-8 px-4">
           <div className="max-w-3xl mx-auto">

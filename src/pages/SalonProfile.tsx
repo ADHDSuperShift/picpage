@@ -16,9 +16,9 @@ const SalonProfile: React.FC = () => {
 
   return (
     <AppProvider>
-      <div className="min-h-screen bg-[#FFF8E7]">
+  <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <div className="relative h-64 md:h-96">
+  <div className="relative h-64 md:h-96">
           <img src={salon.image} alt={salon.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E] to-transparent"></div>
           <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -32,7 +32,7 @@ const SalonProfile: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 py-8">
+  <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex gap-4 mb-8 border-b border-[#D4AF37]/20">
             {['services', 'gallery', 'about'].map((tab) => (
               <button

@@ -14,9 +14,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <AppProvider>
-      <div className="min-h-screen bg-[#FFF8E7]">
+  <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <div className="bg-[#1E1E1E] text-white py-8 px-4">
+  <div className="bg-[#1E1E1E] dark:bg-[#0f0f0f] text-white py-8 px-4">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl font-bold">
               <span className="text-[#D4AF37]">Salon</span> Dashboard

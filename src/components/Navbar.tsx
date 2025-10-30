@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTheme } from '@/components/theme-provider';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -8,8 +9,10 @@ const Navbar: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const { theme, setTheme } = useTheme();
+
   return (
-    <nav className="bg-[#1E1E1E] text-white sticky top-0 z-50 shadow-lg">
+    <nav className="bg-[#1E1E1E] dark:bg-[#0f0f0f] text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <button onClick={() => navigate('/')} className="text-2xl font-bold">
@@ -34,6 +37,18 @@ const Navbar: React.FC = () => {
             >
               Dashboard
             </button>
+            <div className="flex items-center gap-2">
+              <select
+                aria-label="Theme"
+                className="bg-transparent border border-[#D4AF37]/40 rounded px-2 py-1 text-sm"
+                value={theme}
+                onChange={(e) => setTheme(e.target.value as any)}
+              >
+                <option className="text-[#1E1E1E]" value="light">Light</option>
+                <option className="text-[#1E1E1E]" value="dark">Dark</option>
+                <option className="text-[#1E1E1E]" value="system">System</option>
+              </select>
+            </div>
           </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -56,6 +71,19 @@ const Navbar: React.FC = () => {
           <button onClick={() => { navigate('/dashboard'); setMobileMenuOpen(false); }} className="block w-full text-left px-4 py-3 hover:bg-[#D4AF37]/20">
             Dashboard
           </button>
+          <div className="px-4 py-3">
+            <label className="block text-sm mb-1">Theme</label>
+            <select
+              aria-label="Theme"
+              className="w-full bg-transparent border border-[#D4AF37]/40 rounded px-2 py-2 text-sm"
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as any)}
+            >
+              <option className="text-[#1E1E1E]" value="light">Light</option>
+              <option className="text-[#1E1E1E]" value="dark">Dark</option>
+              <option className="text-[#1E1E1E]" value="system">System</option>
+            </select>
+          </div>
         </div>
       )}
     </nav>
