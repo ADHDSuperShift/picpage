@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         <div className="mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">
+          <h1 className="text-5xl md:text-7xl font-display font-semibold mb-4">
             <span className="text-[#D4AF37]">PicPage</span>
           </h1>
           <div className="h-1 w-32 bg-[#D4AF37] mx-auto mb-6"></div>
