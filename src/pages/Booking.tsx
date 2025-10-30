@@ -41,8 +41,8 @@ const Booking: React.FC = () => {
         </div>
         <div className="max-w-3xl mx-auto px-4 py-8">
           {step === 1 ? (
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h2 className="text-2xl font-bold text-[#1E1E1E] mb-6">{service.name}</h2>
+            <div className="bg-[#1F1F1F] rounded-xl p-6 shadow-lg border border-white/10 text-gray-100">
+              <h2 className="text-2xl font-bold text-white mb-6">{service.name}</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                   type="text"
@@ -50,7 +50,7 @@ const Booking: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 bg-[#141414] text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
                 <input
                   type="tel"
@@ -58,7 +58,7 @@ const Booking: React.FC = () => {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 bg-[#141414] text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
                 <input
                   type="email"
@@ -66,21 +66,21 @@ const Booking: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 bg-[#141414] text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
                 <input
                   type="date"
                   required
                   value={formData.date}
                   onChange={(e) => setFormData({...formData, date: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 bg-[#141414] text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
                 <input
                   type="time"
                   required
                   value={formData.time}
                   onChange={(e) => setFormData({...formData, time: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                  className="w-full px-4 py-3 rounded-lg border border-white/10 bg-[#141414] text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
                 />
                 <button
                   type="submit"
@@ -91,12 +91,12 @@ const Booking: React.FC = () => {
               </form>
             </div>
           ) : (
-            <div className="bg-white rounded-xl p-8 shadow-lg text-center">
+            <div className="bg-[#1F1F1F] rounded-xl p-8 shadow-lg text-center border border-white/10 text-gray-100">
               <h2 className="text-3xl font-bold text-[#D4AF37] mb-6">Booking Confirmed!</h2>
               <div className="mb-6">
                 <QRCode value={`BOOKING:${bookingId}|SALON:${salon.id}|DATE:${formData.date}|TIME:${formData.time}`} />
               </div>
-              <div className="text-left bg-[#FFF8E7] p-4 rounded-lg mb-6">
+              <div className="text-left bg-[#1B1B1B] border border-white/10 p-4 rounded-lg mb-6 text-gray-200">
                 <p className="mb-2"><strong>Salon:</strong> {salon.name}</p>
                 <p className="mb-2"><strong>Service:</strong> {service.name}</p>
                 <p className="mb-2"><strong>Date:</strong> {formData.date}</p>

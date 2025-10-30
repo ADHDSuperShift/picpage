@@ -38,10 +38,10 @@ const SalonProfile: React.FC = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`pb-3 px-4 font-semibold capitalize transition-colors ${
+                className={`pb-3 px-4 font-semibold capitalize transition-colors border-b-2 ${
                   activeTab === tab
-                    ? 'text-[#C81D25] border-b-2 border-[#C81D25]'
-                    : 'text-gray-600 hover:text-[#D4AF37]'
+                    ? 'text-[#C81D25] border-[#C81D25]'
+                    : 'text-gray-400 border-transparent hover:text-[#D4AF37]'
                 }`}
               >
                 {tab}
@@ -67,8 +67,8 @@ const SalonProfile: React.FC = () => {
             </div>
           )}
           {activeTab === 'about' && (
-            <div className="bg-white p-6 rounded-lg">
-              <p className="text-gray-700">{salon.description}</p>
+            <div className="bg-[#1F1F1F] p-6 rounded-lg border border-white/10">
+              <p className="text-gray-300">{salon.description}</p>
             </div>
           )}
         </div>

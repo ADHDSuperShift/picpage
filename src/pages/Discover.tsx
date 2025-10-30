@@ -78,7 +78,7 @@ const Discover: React.FC = () => {
               placeholder="Search salons..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full md:w-96 px-4 py-3 rounded-lg text-[#1E1E1E] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+              className="w-full md:w-96 px-4 py-3 rounded-lg bg-[#141414] border border-white/10 text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
             />
           </div>
         </div>
@@ -93,11 +93,11 @@ const Discover: React.FC = () => {
               </button>
               {userLocation && (
                 <div className="flex items-center gap-2">
-                  <label className="text-sm text-[#1E1E1E]">Radius:</label>
+                  <label className="text-sm text-gray-200">Radius:</label>
                   <select
                     value={radiusKm}
                     onChange={(e) => setRadiusKm(Number(e.target.value))}
-                    className="px-3 py-2 rounded-lg border border-gray-300 bg-white"
+                    className="px-3 py-2 rounded-lg border border-white/10 bg-[#141414] text-gray-100"
                   >
                     {[2,5,10,20].map(r => (
                       <option key={r} value={r}>{r} km</option>
@@ -114,7 +114,7 @@ const Discover: React.FC = () => {
             )}
           </div>
           <div className="mb-8">
-            <h2 className="text-xl font-semibold text-[#1E1E1E] mb-4">Filter by Category</h2>
+            <h2 className="text-xl font-semibold text-white mb-4">Filter by Category</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
               {CATEGORIES.map((cat) => (
                 <CategoryButton

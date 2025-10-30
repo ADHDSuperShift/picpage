@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <button onClick={() => navigate('/')} className="text-2xl font-bold">
-            <span className="text-[#D4AF37]">Pic</span>Page
+            <span className="text-[#D4AF37]">PicPage</span>
           </button>
           <div className="hidden md:flex items-center space-x-6">
             <button
